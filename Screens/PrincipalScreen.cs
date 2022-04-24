@@ -16,5 +16,6 @@ namespace weighting_soft
         {
             InitializeComponent();
         }
+
     }
 }
