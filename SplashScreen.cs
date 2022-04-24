@@ -2,6 +2,9 @@
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using System.IO;
+using System.Diagnostics;
+using System.Text;
 
 namespace weighting_soft
 {
@@ -26,17 +29,59 @@ namespace weighting_soft
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
         }
 
-        public async void Hold()
+        private async void Hold()
         {     
 
             await Task.Delay(1500);
 
-            InitialConfigurationScreen initialConfigurationScreen = new InitialConfigurationScreen();
-
             this.Hide();
 
-            initialConfigurationScreen.ShowDialog();
+            if (CheckIfConfigFileExists())
+            {
+                InitialConfigurationScreen initialConfigurationScreen = new InitialConfigurationScreen();
+                initialConfigurationScreen.ShowDialog();
+            }
+            else
+            {
+                //TODO: if config file exists
+            }
 
         }
+
+        private bool CheckIfConfigFileExists()
+        {                        
+
+            try
+            {
+                string file_path = @"config.";
+                if (!File.Exists(file_path))
+                {
+                    using (FileStream fs = File.Create(file_path))
+                    {
+                        byte[] info = new UTF8Encoding(true).GetBytes("port=\nbaud=\n");
+                        fs.Write(info, 0, info.Length);
+                    }
+                    return false;
+                }
+                else
+                {
+                    using (StreamReader sr = File.OpenText(file_path))
+                    {
+                        string s = "";
+                        while ((s = sr.ReadLine()) != null)
+                        {
+                            Console.WriteLine(s);
+                        }
+                    }
+                    return true;
+                }                  
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
     }
 }
