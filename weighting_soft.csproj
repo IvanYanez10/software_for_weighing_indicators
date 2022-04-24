@@ -56,11 +56,17 @@
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InitialConfigurationScreen.cs">
+    <Compile Include="Screens\InitialConfigurationScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InitialConfigurationScreen.Designer.cs">
+    <Compile Include="Screens\InitialConfigurationScreen.Designer.cs">
       <DependentUpon>InitialConfigurationScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\PrincipalScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\PrincipalScreen.Designer.cs">
+      <DependentUpon>PrincipalScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -68,10 +74,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.cs">
+    <Compile Include="Screens\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SplashScreen.Designer.cs">
+    <Compile Include="Screens\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -99,7 +105,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SplashScreen.resx">
+    <EmbeddedResource Include="Screens\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

@@ -36,7 +36,7 @@ namespace weighting_soft
 
             this.Hide();
 
-            if (CheckIfConfigFileExists())
+            if (!CheckIfConfigFileExists())
             {
                 InitialConfigurationScreen initialConfigurationScreen = new InitialConfigurationScreen();
                 initialConfigurationScreen.ShowDialog();
