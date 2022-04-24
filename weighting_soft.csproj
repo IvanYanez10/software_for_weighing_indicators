@@ -56,6 +56,12 @@
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InitialConfigurationScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialConfigurationScreen.Designer.cs">
+      <DependentUpon>InitialConfigurationScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

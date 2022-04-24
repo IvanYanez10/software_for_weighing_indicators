@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace weighting_soft
 {
@@ -22,7 +22,21 @@ namespace weighting_soft
         public SplashScreen()
         {
             InitializeComponent();
+            Hold();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+        }
+
+        public async void Hold()
+        {     
+
+            await Task.Delay(1500);
+
+            InitialConfigurationScreen initialConfigurationScreen = new InitialConfigurationScreen();
+
+            this.Hide();
+
+            initialConfigurationScreen.ShowDialog();
+
         }
     }
 }
