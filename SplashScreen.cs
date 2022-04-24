@@ -30,8 +30,8 @@ namespace weighting_soft
         }
 
         private async void Hold()
-        {     
-
+        {
+            //TODO: CheckIfConfigFileExists take less time on load 
             await Task.Delay(1500);
 
             this.Hide();
@@ -43,7 +43,8 @@ namespace weighting_soft
             }
             else
             {
-                //TODO: if config file exists
+                PrincipalScreen principalScreen = new PrincipalScreen();
+                principalScreen.ShowDialog();
             }
 
         }
@@ -65,14 +66,6 @@ namespace weighting_soft
                 }
                 else
                 {
-                    using (StreamReader sr = File.OpenText(file_path))
-                    {
-                        string s = "";
-                        while ((s = sr.ReadLine()) != null)
-                        {
-                            Console.WriteLine(s);
-                        }
-                    }
                     return true;
                 }                  
             }
