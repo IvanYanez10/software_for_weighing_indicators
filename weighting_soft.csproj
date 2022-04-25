@@ -62,6 +62,12 @@
     <Compile Include="Screens\InitialConfigurationScreen.Designer.cs">
       <DependentUpon>InitialConfigurationScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\NewTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\NewTicket.Designer.cs">
+      <DependentUpon>NewTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\PrincipalScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="Screens\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Tickets.Designer.cs">
+      <DependentUpon>Tickets.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -108,11 +120,17 @@
     <EmbeddedResource Include="Screens\InitialConfigurationScreen.resx">
       <DependentUpon>InitialConfigurationScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\NewTicket.resx">
+      <DependentUpon>NewTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\PrincipalScreen.resx">
       <DependentUpon>PrincipalScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Tickets.resx">
+      <DependentUpon>Tickets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
