@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace weighting_soft
+namespace weighting_soft.Screens
 {
-    public partial class PrincipalScreen : Form
+    public partial class NewTicket : Form
     {
-        public PrincipalScreen()
+        public NewTicket()
         {
             InitializeComponent();
         }
