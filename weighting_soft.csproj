@@ -53,7 +53,6 @@
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="App.config" />
-    <None Include="packages.config" />
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
@@ -62,12 +61,6 @@
     </Compile>
     <Compile Include="Screens\InitialConfigurationScreen.Designer.cs">
       <DependentUpon>InitialConfigurationScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\NewTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\NewTicket.Designer.cs">
-      <DependentUpon>NewTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\PrincipalScreen.cs">
       <SubType>Form</SubType>
@@ -87,59 +80,17 @@
     <Compile Include="Screens\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Tickets.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Tickets.Designer.cs">
-      <DependentUpon>Tickets.cs</DependentUpon>
-    </Compile>
     <Compile Include="Services\ConfigFile.cs" />
     <Compile Include="Services\Printing.cs" />
     <Compile Include="Services\SerialCommunication.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="BarcodeStandard, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\BarcodeLib.2.4.0\lib\netstandard2.0\BarcodeStandard.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
-      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
@@ -164,17 +115,11 @@
     <EmbeddedResource Include="Screens\InitialConfigurationScreen.resx">
       <DependentUpon>InitialConfigurationScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\NewTicket.resx">
-      <DependentUpon>NewTicket.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\PrincipalScreen.resx">
       <DependentUpon>PrincipalScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Tickets.resx">
-      <DependentUpon>Tickets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
