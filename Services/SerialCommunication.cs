@@ -59,6 +59,11 @@ namespace weighting_soft.Services
 
         }
 
+        public void Disconnect()
+        {
+            _mySerialPort.Close();
+        }
+
         private void OnDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             Thread.Sleep(50);
