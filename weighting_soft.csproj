@@ -93,7 +93,9 @@
     <Compile Include="Screens\Tickets.Designer.cs">
       <DependentUpon>Tickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\ConfigFile.cs" />
     <Compile Include="Services\Printing.cs" />
+    <Compile Include="Services\SerialCommunication.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BarcodeStandard, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">

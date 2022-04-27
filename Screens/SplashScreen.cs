@@ -2,9 +2,7 @@
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using System.IO;
-using System.Diagnostics;
-using System.Text;
+using weighting_soft.Services;
 
 namespace weighting_soft
 {
@@ -25,56 +23,42 @@ namespace weighting_soft
         public SplashScreen()
         {
             InitializeComponent();
-            Hold();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+            SplashTimer();            
         }
 
-        private async void Hold()
+        private async void SplashTimer()
         {
-            //TODO: CheckIfConfigFileExists take less time on load 
-            await Task.Delay(1500);
+            ConfigFile nc = new ConfigFile();
+
+            int time = 1500;
+
+            bool exists = false;
+
+            if (nc.CheckIfConfigFileExists())
+            {
+                time = 500;
+                exists = true;
+            }
+
+            await Task.Delay(time);
 
             this.Hide();
 
-            if (!CheckIfConfigFileExists())
+            if (exists)
+            {
+                PrincipalScreen principalScreen = new PrincipalScreen();
+                principalScreen.ShowDialog();                
+            }
+            else
             {
                 InitialConfigurationScreen initialConfigurationScreen = new InitialConfigurationScreen();
                 initialConfigurationScreen.ShowDialog();
             }
-            else
-            {
-                PrincipalScreen principalScreen = new PrincipalScreen();
-                principalScreen.ShowDialog();
-            }
 
         }
 
-        private bool CheckIfConfigFileExists()
-        {                        
-
-            try
-            {
-                string file_path = @"config.";
-                if (!File.Exists(file_path))
-                {
-                    using (FileStream fs = File.Create(file_path))
-                    {
-                        byte[] info = new UTF8Encoding(true).GetBytes("port=\nbaud=\n");
-                        fs.Write(info, 0, info.Length);
-                    }
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }                  
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return false;
-            }
-        }
+        
 
     }
 }

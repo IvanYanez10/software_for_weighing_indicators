@@ -31,19 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.btnTryconnection = new System.Windows.Forms.Button();
+            this.linkHelp = new System.Windows.Forms.LinkLabel();
+            this.cBPort = new System.Windows.Forms.ComboBox();
+            this.cBBaud = new System.Windows.Forms.ComboBox();
+            this.lblErr = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 15);
+            this.label1.Location = new System.Drawing.Point(86, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 20);
             this.label1.TabIndex = 0;
@@ -53,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 55);
+            this.label2.Location = new System.Drawing.Point(48, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 1;
@@ -63,77 +62,73 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 94);
+            this.label3.Location = new System.Drawing.Point(48, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Baud";
             // 
-            // label4
+            // btnTryconnection
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 134);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Velocidad";
+            this.btnTryconnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTryconnection.Location = new System.Drawing.Point(23, 125);
+            this.btnTryconnection.Name = "btnTryconnection";
+            this.btnTryconnection.Size = new System.Drawing.Size(260, 40);
+            this.btnTryconnection.TabIndex = 4;
+            this.btnTryconnection.Text = "Probar conexion";
+            this.btnTryconnection.UseVisualStyleBackColor = true;
+            this.btnTryconnection.Click += new System.EventHandler(this.btnTryconnection_Click);
             // 
-            // button1
+            // linkHelp
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(25, 175);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(286, 40);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Probar conexion";
-            this.button1.UseVisualStyleBackColor = true;
+            this.linkHelp.AutoSize = true;
+            this.linkHelp.Location = new System.Drawing.Point(135, 179);
+            this.linkHelp.Name = "linkHelp";
+            this.linkHelp.Size = new System.Drawing.Size(37, 13);
+            this.linkHelp.TabIndex = 5;
+            this.linkHelp.TabStop = true;
+            this.linkHelp.Text = "Ayuda";
+            this.linkHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHelp_LinkClicked);
             // 
-            // linkLabel1
+            // cBPort
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(143, 230);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(37, 13);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Ayuda";
+            this.cBPort.FormattingEnabled = true;
+            this.cBPort.Location = new System.Drawing.Point(126, 50);
+            this.cBPort.Name = "cBPort";
+            this.cBPort.Size = new System.Drawing.Size(135, 21);
+            this.cBPort.TabIndex = 6;
             // 
-            // comboBox1
+            // cBBaud
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cBBaud.FormattingEnabled = true;
+            this.cBBaud.Items.AddRange(new object[] {
+            "2400",
+            "9600",
+            "57600"});
+            this.cBBaud.Location = new System.Drawing.Point(126, 89);
+            this.cBBaud.Name = "cBBaud";
+            this.cBBaud.Size = new System.Drawing.Size(135, 21);
+            this.cBBaud.TabIndex = 7;
             // 
-            // comboBox2
+            // lblErr
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(100, 86);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(135, 21);
-            this.comboBox2.TabIndex = 7;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(100, 126);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(135, 21);
-            this.comboBox3.TabIndex = 8;
+            this.lblErr.AutoSize = true;
+            this.lblErr.Location = new System.Drawing.Point(135, 214);
+            this.lblErr.Name = "lblErr";
+            this.lblErr.Size = new System.Drawing.Size(35, 13);
+            this.lblErr.TabIndex = 8;
+            this.lblErr.Text = "label4";
             // 
             // InitialConfigurationScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 261);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(305, 236);
+            this.Controls.Add(this.lblErr);
+            this.Controls.Add(this.cBBaud);
+            this.Controls.Add(this.cBPort);
+            this.Controls.Add(this.linkHelp);
+            this.Controls.Add(this.btnTryconnection);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -150,11 +145,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button btnTryconnection;
+        private System.Windows.Forms.LinkLabel linkHelp;
+        private System.Windows.Forms.ComboBox cBPort;
+        private System.Windows.Forms.ComboBox cBBaud;
+        private System.Windows.Forms.Label lblErr;
     }
 }
