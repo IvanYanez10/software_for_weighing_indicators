@@ -8,7 +8,7 @@ namespace weighting_soft.Services
 {
     internal class SerialCommunication
     {
-        private SerialPort _mySerialPort = new SerialPort();
+        private readonly SerialPort _mySerialPort = new SerialPort();
         private string labelData;
 
         public string serialPort
@@ -44,19 +44,18 @@ namespace weighting_soft.Services
 
         public void Connect()
         {
-
             SerialConfiguration();
-
             try
             {
                 if (!_mySerialPort.IsOpen)
+                {
                     _mySerialPort.Open();
+                }                    
             }
             catch (ArgumentException e)
             {
                 Debug.WriteLine(e);
             }
-
         }
 
         public void Disconnect()
@@ -66,9 +65,8 @@ namespace weighting_soft.Services
 
         private void OnDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Thread.Sleep(50);
+            Thread.Sleep(20);
             labelData = _mySerialPort.ReadExisting().Trim();
-            //Debug.WriteLine("d: "+ labelData);
         }
 
         public string GetDataLabel()

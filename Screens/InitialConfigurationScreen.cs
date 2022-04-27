@@ -78,14 +78,11 @@ namespace weighting_soft
             {
                 ConfigFile cf = new ConfigFile();
                 cf.SaveConfiguration(GetPortName(), GetBaudrate());
+                this.Close();
                 if (!data)
                 {
                     PrincipalScreen ps = new PrincipalScreen();
                     ps.ShowDialog();
-                }
-                else
-                {
-                    this.Close();
                 }                
             }
             else

@@ -43,6 +43,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             this.pnlOptions.SuspendLayout();
@@ -52,15 +53,15 @@
             // 
             // lblWeight
             // 
-            this.lblWeight.AutoSize = true;
+            this.lblWeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeight.ForeColor = System.Drawing.Color.White;
-            this.lblWeight.Location = new System.Drawing.Point(115, 92);
+            this.lblWeight.Location = new System.Drawing.Point(3, 94);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(254, 98);
+            this.lblWeight.Size = new System.Drawing.Size(332, 98);
             this.lblWeight.TabIndex = 0;
-            this.lblWeight.Text = "0.0kg";
-            this.lblWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWeight.Text = "0.0";
+            this.lblWeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblNotification
             // 
@@ -215,12 +216,25 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.lblWeight);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 30);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(484, 323);
             this.panel3.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(341, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 98);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "kg";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PrincipalScreen
             // 
@@ -243,7 +257,6 @@
             this.pnlOptions.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +277,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
     }
 }

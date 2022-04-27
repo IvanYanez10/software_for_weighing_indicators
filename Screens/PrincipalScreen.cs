@@ -19,7 +19,7 @@ namespace weighting_soft
             sc = new SerialCommunication(cf.configPort, cf.configBaud);
             sc.Connect();
             Notification("Conectado");
-            lblWeight.Text = cf.configPort;
+            lblPort.Text = cf.configPort;
             InitTimer();
         }
 
@@ -42,8 +42,7 @@ namespace weighting_soft
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblWeight.Text = sc.GetDataLabel();
-            lblPort.Text = sc.serialPort;
+            lblWeight.Text = sc.GetDataLabel();            
         }
 
         private void button1_Click(object sender, EventArgs e)
