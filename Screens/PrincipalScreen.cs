@@ -6,13 +6,17 @@ namespace weighting_soft
 {
     public partial class PrincipalScreen : Form
     {
-
-        SerialCommunication sc = new SerialCommunication("COM1", 9600); //get data from config file
+        readonly SerialCommunication sc;
+        ConfigFile cf;
 
         public PrincipalScreen()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            cf = new ConfigFile();
+            cf.ReadConfiguration();
+            sc = new SerialCommunication(cf.configPort, cf.configBaud);
             sc.Connect();
+            lblWeight.Text = cf.configPort;
             InitTimer();
         }
 
