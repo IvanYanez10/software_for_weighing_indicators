@@ -27,6 +27,9 @@ namespace weighting_soft
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+            this.BackColor = System.Drawing.Color.FromArgb(77, 86, 127);
+            panel1.Padding = new Padding(5);
+            panel1.Dock = DockStyle.Fill;
             lblErr.Text = "";
             SetPortList();
             SetPrintersList();
@@ -40,6 +43,7 @@ namespace weighting_soft
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
             lblErr.Text = "";
             SetPortList();
+            SetPrintersList();
             cBBaud.SelectedIndex = 1;
         }
 
@@ -147,5 +151,9 @@ namespace weighting_soft
             lblErr.Text = "";
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,7 +9,12 @@ namespace weighting_soft.Services
     internal class SerialCommunication
     {
         private readonly SerialPort _mySerialPort = new SerialPort();
-        private string labelData;
+        
+        public string labelData
+        {
+            get;
+            private set;
+        }
 
         public string serialPort
         {
@@ -18,6 +23,12 @@ namespace weighting_soft.Services
         }
 
         public int baudRate
+        {
+            get;
+            private set;
+        }
+
+        public bool isReceivingData
         {
             get;
             private set;
@@ -40,6 +51,7 @@ namespace weighting_soft.Services
             _mySerialPort.Handshake = Handshake.None;
             _mySerialPort.Encoding = ASCIIEncoding.ASCII;
             _mySerialPort.DataReceived += new SerialDataReceivedEventHandler(OnDataReceived);
+            _mySerialPort.ErrorReceived += new SerialErrorReceivedEventHandler(OnErrorDataReceived);
         }
 
         public void Connect()
@@ -66,13 +78,18 @@ namespace weighting_soft.Services
         private void OnDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             Thread.Sleep(20);
+            isReceivingData = true;
             labelData = _mySerialPort.ReadExisting().Trim();
+            Console.WriteLine(labelData);
         }
 
-        public string GetDataLabel()
+        private void OnErrorDataReceived(object sender, SerialErrorReceivedEventArgs e)
         {
-            return labelData;
+            Thread.Sleep(20);
+            isReceivingData = false;
+            Console.WriteLine(e);
         }
+
 
         public bool TryConnection()
         {

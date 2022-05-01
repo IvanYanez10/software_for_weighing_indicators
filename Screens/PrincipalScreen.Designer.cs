@@ -37,13 +37,13 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pnlOptions = new System.Windows.Forms.Panel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             this.pnlOptions.SuspendLayout();
@@ -86,13 +86,14 @@
             // 
             // lblPort
             // 
-            this.lblPort.AutoSize = true;
             this.lblPort.ForeColor = System.Drawing.Color.White;
-            this.lblPort.Location = new System.Drawing.Point(429, 15);
+            this.lblPort.Location = new System.Drawing.Point(373, 9);
             this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(43, 13);
+            this.lblPort.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPort.Size = new System.Drawing.Size(99, 25);
             this.lblPort.TabIndex = 4;
-            this.lblPort.Text = "connec";
+            this.lblPort.Text = "serial port";
+            this.lblPort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // picNotification
             // 
@@ -138,6 +139,18 @@
             this.pnlOptions.Name = "pnlOptions";
             this.pnlOptions.Size = new System.Drawing.Size(484, 113);
             this.pnlOptions.TabIndex = 6;
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.LinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel3.Location = new System.Drawing.Point(9, 72);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(37, 13);
+            this.linkLabel3.TabIndex = 6;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Ayuda";
+            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -219,18 +232,6 @@
             this.label1.Text = "kg";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.LinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel3.Location = new System.Drawing.Point(9, 72);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(37, 13);
-            this.linkLabel3.TabIndex = 6;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Ayuda";
-            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // PrincipalScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +253,7 @@
             this.pnlOptions.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.ResumeLayout(false);
 
         }

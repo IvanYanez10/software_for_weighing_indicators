@@ -18,18 +18,23 @@ namespace weighting_soft
             cf.ReadConfiguration();
             sc = new SerialCommunication(cf.configPort, cf.configBaud);
             sc.Connect();
-            Notification("Conectado");
+            Notification("Conectado", 1);
             lblPort.Text = cf.configPort;
             InitTimer();
         }
 
-        private async void Notification(string text)
+        private async void Notification(string text, float time)
         {
             picNotification.Visible = true;
             lblNotification.Text = text;
-            await Task.Delay(1500);
+            await Task.Delay((int)(time*1000));
             picNotification.Visible = false;
             lblNotification.Text = "";
+        }
+
+        private void Notification(string text)
+        {
+            lblPort.Text = text + " " + cf.configPort;
         }
 
         public void InitTimer()
@@ -42,18 +47,26 @@ namespace weighting_soft
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblWeight.Text = sc.GetDataLabel();            
+            if (sc.isReceivingData)
+            {
+                lblWeight.Text = sc.labelData;
+            }
+            else
+            {
+                Notification("Sin datos"); 
+            }
+                       
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Notification("Imprimiendo...");
+            Notification("Imprimiendo...", 2);
             Printing ptr = new Printing(5);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Notification("Abriendo configuracion");
+            Notification("Abriendo configuracion", 1);
             sc.Disconnect();
             InitialConfigurationScreen initialConfigurationScreen = new InitialConfigurationScreen(true);
             initialConfigurationScreen.ShowDialog();
@@ -61,12 +74,12 @@ namespace weighting_soft
             cf.ReadConfiguration();
             sc = new SerialCommunication(cf.configPort, cf.configBaud);
             sc.Connect();
-            Notification("Conectado");
+            Notification("Conectado", 2);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Notification("Enlace a tutorial");
+            Notification("Enlace a tutorial", 1);
             try
             {
                 Process.Start(new ProcessStartInfo("http://baservi.com/") { UseShellExecute = true }); //TODO: save data to DB or excell
@@ -84,7 +97,7 @@ namespace weighting_soft
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Notification("Enlace a tutorial");
+            Notification("Enlace a tutorial", 1);
             try
             {
                 Process.Start(new ProcessStartInfo("http://baservi.com/") { UseShellExecute = true }); //TODO: configure printer
@@ -97,7 +110,7 @@ namespace weighting_soft
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Notification("Enlace a tutorial");
+            Notification("Enlace a tutorial", 1);
             try
             {
                 Process.Start(new ProcessStartInfo("http://baservi.com/") { UseShellExecute = true }); //TODO: weighting software landingpage with event handler
