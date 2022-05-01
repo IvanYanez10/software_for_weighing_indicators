@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using weighting_soft.Services;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using System.Drawing.Printing;
 
 namespace weighting_soft
 {
@@ -28,6 +29,7 @@ namespace weighting_soft
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
             lblErr.Text = "";
             SetPortList();
+            SetPrintersList();
             cBBaud.SelectedIndex = 1;            
         }
 
@@ -60,6 +62,23 @@ namespace weighting_soft
             
         }
 
+        private void SetPrintersList()
+        {
+            cbPrinters.Items.Clear();
+            foreach (string printer in PrinterSettings.InstalledPrinters)
+            {
+                cbPrinters.Items.Add(printer);
+            }
+            try
+            {
+                cbPrinters.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                Notification("Error 235, no hay impresoras instaladas.");
+            }
+        }
+
         private string GetPortName()
         {
             return cBPort.Text.ToString();
@@ -70,6 +89,11 @@ namespace weighting_soft
             return Convert.ToInt32(cBBaud.Text.ToString());
         }
 
+        private string GetPrinter()
+        {
+            return cbPrinters.Text.ToString();
+        }
+
         private void btnTryconnection_Click(object sender, EventArgs e)
         {
             SerialCommunication sc = new SerialCommunication(GetPortName(), GetBaudrate());
@@ -77,7 +101,7 @@ namespace weighting_soft
             if (sc.TryConnection())
             {
                 ConfigFile cf = new ConfigFile();
-                cf.SaveConfiguration(GetPortName(), GetBaudrate());
+                cf.SaveConfiguration(GetPortName(), GetBaudrate(), GetPrinter());
                 this.Close();
                 if (!data)
                 {

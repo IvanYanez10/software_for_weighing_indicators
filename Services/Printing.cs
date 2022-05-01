@@ -8,33 +8,36 @@ namespace weighting_soft.Services
     {
         PrintDocument document;
         string weight;
+        readonly ConfigFile cf;
 
         public Printing(float pesoM)
         {
+            cf = new ConfigFile();
+            cf.ReadConfiguration();
             weight = pesoM.ToString();
             document = new PrintDocument();
             document.PrintPage += new PrintPageEventHandler(document_PrintPage);
-            document.PrinterSettings.PrinterName = "POS-58"; //TODO: list printers
+            Console.WriteLine(" "+cf.printer);
+            document.PrinterSettings.PrinterName = cf.printer;
 
             if (document.PrinterSettings.IsValid)
             {
                 document.Print();
             }
+
         }
 
         void document_PrintPage(object sender, PrintPageEventArgs e)
         {
             document.PrintPage += new PrintPageEventHandler(document_PrintPage);
-            Font ft = new Font("Arial", 10, FontStyle.Regular);
-            DateTime now = DateTime.Now;
+            Font ft = new Font("Arial", 11, FontStyle.Regular);
+            DateTime nowTime = DateTime.Now;
             weight = "Peso: " + weight + "kg";
+            Bitmap businessLogo = new Bitmap(@"resources\logo.bmp", true);
 
-            Bitmap businessLogo = new Bitmap(@"D:\Desarrollo\Descargas\baservi.bmp", true);
-            e.Graphics.DrawImage(businessLogo, new Rectangle(0, 0, 200, 60));
-
-            //e.Graphics.DrawString("EMPRESA", ft, Brushes.Black, 60, 0);
-            e.Graphics.DrawString(weight, ft, Brushes.Black, 0, 75);
-            e.Graphics.DrawString(now.ToString(), ft, Brushes.Black, 0, 210);
+            e.Graphics.DrawImage(businessLogo, new Rectangle(0, 0, 80, 80));
+            e.Graphics.DrawString(weight, ft, Brushes.Black, 0, 90);
+            e.Graphics.DrawString(nowTime.ToString(), ft, Brushes.Black, 0, 120);
         }
     }
 }

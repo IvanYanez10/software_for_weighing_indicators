@@ -37,6 +37,8 @@
             this.cBBaud = new System.Windows.Forms.ComboBox();
             this.lblErr = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbPrinters = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +68,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(57, 119);
+            this.label3.Location = new System.Drawing.Point(57, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 2;
@@ -79,7 +81,7 @@
             this.btnTryconnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTryconnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTryconnection.ForeColor = System.Drawing.Color.White;
-            this.btnTryconnection.Location = new System.Drawing.Point(30, 157);
+            this.btnTryconnection.Location = new System.Drawing.Point(28, 194);
             this.btnTryconnection.Name = "btnTryconnection";
             this.btnTryconnection.Size = new System.Drawing.Size(260, 40);
             this.btnTryconnection.TabIndex = 4;
@@ -91,7 +93,7 @@
             // 
             this.linkHelp.AutoSize = true;
             this.linkHelp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.linkHelp.Location = new System.Drawing.Point(141, 250);
+            this.linkHelp.Location = new System.Drawing.Point(139, 287);
             this.linkHelp.Name = "linkHelp";
             this.linkHelp.Size = new System.Drawing.Size(37, 13);
             this.linkHelp.TabIndex = 5;
@@ -123,7 +125,7 @@
             // 
             this.lblErr.AutoSize = true;
             this.lblErr.ForeColor = System.Drawing.Color.White;
-            this.lblErr.Location = new System.Drawing.Point(27, 217);
+            this.lblErr.Location = new System.Drawing.Point(25, 254);
             this.lblErr.Name = "lblErr";
             this.lblErr.Size = new System.Drawing.Size(35, 13);
             this.lblErr.TabIndex = 8;
@@ -143,12 +145,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cbPrinters
+            // 
+            this.cbPrinters.FormattingEnabled = true;
+            this.cbPrinters.Items.AddRange(new object[] {
+            "2400",
+            "9600",
+            "57600"});
+            this.cbPrinters.Location = new System.Drawing.Point(135, 152);
+            this.cbPrinters.Name = "cbPrinters";
+            this.cbPrinters.Size = new System.Drawing.Size(135, 21);
+            this.cbPrinters.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(57, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Impresora";
+            // 
             // InitialConfigurationScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(127)))));
-            this.ClientSize = new System.Drawing.Size(330, 286);
+            this.ClientSize = new System.Drawing.Size(330, 332);
+            this.Controls.Add(this.cbPrinters);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cBBaud);
             this.Controls.Add(this.cBPort);
@@ -178,5 +205,7 @@
         private System.Windows.Forms.ComboBox cBBaud;
         private System.Windows.Forms.Label lblErr;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbPrinters;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -39,11 +39,11 @@
             this.pnlOptions = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             this.pnlOptions.SuspendLayout();
@@ -56,7 +56,7 @@
             this.lblWeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeight.ForeColor = System.Drawing.Color.White;
-            this.lblWeight.Location = new System.Drawing.Point(3, 94);
+            this.lblWeight.Location = new System.Drawing.Point(3, 71);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(332, 98);
             this.lblWeight.TabIndex = 0;
@@ -130,18 +130,18 @@
             // 
             // pnlOptions
             // 
+            this.pnlOptions.Controls.Add(this.linkLabel3);
             this.pnlOptions.Controls.Add(this.linkLabel1);
             this.pnlOptions.Controls.Add(this.linkLabel2);
             this.pnlOptions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlOptions.Location = new System.Drawing.Point(0, 353);
+            this.pnlOptions.Location = new System.Drawing.Point(0, 306);
             this.pnlOptions.Name = "pnlOptions";
-            this.pnlOptions.Size = new System.Drawing.Size(484, 66);
+            this.pnlOptions.Size = new System.Drawing.Size(484, 113);
             this.pnlOptions.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -164,23 +164,6 @@
             this.button4.Text = "X";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(46)))), ((int)(((byte)(127)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(66)))), ((int)(((byte)(127)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(176, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Acerca";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -221,7 +204,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 30);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(484, 323);
+            this.panel3.Size = new System.Drawing.Size(484, 276);
             this.panel3.TabIndex = 8;
             // 
             // label1
@@ -229,12 +212,24 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(341, 94);
+            this.label1.Location = new System.Drawing.Point(341, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 98);
             this.label1.TabIndex = 1;
             this.label1.Text = "kg";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.LinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel3.Location = new System.Drawing.Point(9, 72);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(37, 13);
+            this.linkLabel3.TabIndex = 6;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Ayuda";
+            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PrincipalScreen
             // 
@@ -274,9 +269,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabel3;
     }
 }
